@@ -1,12 +1,27 @@
+  
 body {
-  padding: 50px;
-  font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
-}
+    font-family: sans-serif;
+    font-weight: 200;
+    background-image: url("./../images//library.jpg");
+    background-repeat: no-repeat, repeat;
+    background-size: cover;
+  
+  }
+  
+  h1, h2, h3 {
+    font-weight: 200;
+  }
+  
+  .navbar {
+    margin-bottom: 40px;
+  }
 
-a {
-  color: #00b7ff;
-}
+  #myMap {
+    height: 500px;
+    background-color: red;
+  }
 
-h1 {
-  color: 15px;
-}
+  .color{
+    color: white;
+  }
+  

@@ -1,0 +1,18 @@
+<div>
+<h1 class="container justify-content-center">Lista de lugares</h1>
+
+{{#each Places}}
+<div class="row row-cols-1 row-cols-md-2 justify-content-center">
+  <div class="col mb-4">
+    <div class="card">
+      <div class="card-body">
+        <h5 class="card-title">{{name}}</h5>
+        <p class="card-text">{{type}}</p>
+      </div>
+      <a href="/places/list/:{{id}}" class="btn btn-info btn-lg active" role="button" aria-pressed="true">Editar</a>
+    </div>
+     
+  </div>
+</div>
+{{/each}}
+</div>
