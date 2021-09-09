@@ -24,22 +24,33 @@ router.get("/list", (req, res) => {
     .find()
     .then((Places) =>{
       
-        res.render("./../views/places/list-places.hbs", { Places })
+        res.render("./../views/places/list-places", { Places })
     })
     .catch((err) => console.log("error de busqueda de lugares", err));
 });
 
 router.get('/list/:id',(req,res)=>{
     const {id} = req.params
-  console.log('esto es req query', req.query)
+  console.log('eeeeeeeeeeeeeeeeeeeesto es req params', req.params)
     Place
         .findById(id)
-        .then(response => res.render('places/edit-place', {response}))
+        .then(response => {
+          console.log('estoy vivo')
+          res.render('places/edit-place', {response})})
         .catch(err => console.log('Esto es un error de list edit',err))
    })
 
 router.get('/delete/:id',(req,res)=>{
-    res.send(req.params)
+    const {id} = req.params
+
+    
+    Place
+     .findByIdAndDelete(id)
+     .then(removedPlace =>{
+      res.redirect('/places/list') 
+      console.log('El perro eliminado es:', removedPlace)})
+     .catch(err => console.log('Hubo un error:', err))
+
 })
 
 module.exports = router;

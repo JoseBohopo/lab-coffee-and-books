@@ -1,14 +1,14 @@
 
 
-<div class="container justify-content-space-evenly">
+<div class="container col-3 justify-content-space-evenly align-center">
 
 <div class="card" style="width: 18rem;">
   <img src="..." class="card-img-top" alt="...">
   <div class="card-body">
-    <h5 class="card-title">{{name}}</h5>
-    <p class="card-text">{{type}}</p>
+    <h5 class="card-title">{{response.name}}</h5>
+    <p class="card-text">{{response.type}}</p>
     <a href="#" class="btn btn-primary">Edit</a>
-    <a href="/places/:{{id}}" class="btn btn-primary">Delete</a>
+    <a href="/places/delete/{{response.id}}" class="btn btn-primary">Delete</a>
   </div>
 </div>
 
