@@ -12,7 +12,7 @@ function initMap() {
 
 function getPlaces(map) {
   axios
-    .get("/api/places")
+    .get("/api/json")
     .then((response) => printPlaces(response.data, map))
     .catch((err) => console.log("holaaaaaa estoy aqui", err));
 }

@@ -22,10 +22,9 @@ router.post("/", (req, res) => {
 router.get("/list", (req, res) => {
   Place
     .find()
-    .then((places) =>{
-        res.send(places)
-        //console.log('esto es places',Places)
-        //res.render("./../views/places/list-places.hbs", { Places })
+    .then((Places) =>{
+      
+        res.render("./../views/places/list-places.hbs", { Places })
     })
     .catch((err) => console.log("error de busqueda de lugares", err));
 });
