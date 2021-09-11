@@ -1,16 +1,42 @@
 
 
-<div class="container col-3 justify-content-space-evenly align-center">
+<h1 class="container align-content-center">Bienvenido, aquí puedes editar este lugar</h1>
 
-<div class="card" style="width: 18rem;">
-  <img src="..." class="card-img-top" alt="...">
-  <div class="card-body">
-    <h5 class="card-title">{{response.name}}</h5>
-    <p class="card-text">{{response.type}}</p>
-    <a href="#" class="btn btn-primary">Edit</a>
-    <a href="/places/delete/{{response.id}}" class="btn btn-primary">Delete</a>
-  </div>
+
+
+<div class="container">
+    <h1>Formulario de Edición</h1>
+    <hr>
+
+    <div class="row justify-content-center">
+
+        <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
+
+            <form action="/places/list/{{response.id}}" method="POST">
+                <div class="form-group">
+                    <label for="title">Título del lugar</label>
+                    <input value='{{response.name}}'type="text" class="form-control" id="title" name="name">
+                </div>
+                <div class="form-group">
+                    <label for="title">Latitud</label>
+                    <input type="text" class="form-control" id="title" name="lat">
+                </div>
+                <div class="form-group">
+                    <label for="title">Longitud</label>
+                    <input type="text" class="form-control" id="title" name="lng">
+                </div>
+                <select name='type' class="custom-select custom-select-lg mb-3">
+                    <option selected>This place is a {{response.type}}</option>
+                    <option value="coffee shop">coffee shop</option>
+                    <option value="bookstore">bookstore</option>
+                </select>
+
+                <button type="submit" class="btn btn-dark btn-block">Editar registro</button>
+            </form>
+        </div>
+    </div>
+
+
+    <hr>
+    <a href="/" class="btn btn-dark">Volver</a>
 </div>
-
-</div>
-
